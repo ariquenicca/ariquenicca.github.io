@@ -8,43 +8,42 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 20% 10%;
+    --foreground: 355 30% 18%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 20% 10%;
+    --card-foreground: 355 30% 18%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 20% 10%;
+    --popover-foreground: 355 30% 18%;
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 355 30% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47.4% 11.2%;
+    --secondary: 355 30% 96.1%;
+    --secondary-foreground: 355 30% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 355 30% 96.1%;
+    --muted-foreground: 355 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 355 30% 96.1%;
+    --accent-foreground: 355 30% 25%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 355 30% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 355 30% 91.4%;
+    --input: 355 30% 91.4%;
+    --ring: 355 30% 40%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 355 5.3% 26.1%;
+    --sidebar-primary: 355 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 355 4.8% 95.9%;
+    --sidebar-accent-foreground: 355 5.9% 10%;
+    --sidebar-border: 355 13% 91%;
+    --sidebar-ring: 355 91.2% 59.8%;
   }
 }
 
@@ -118,4 +117,21 @@ body {
 
 .button-hover-effect:hover:after {
   left: 100%;
+}
+
+/* Theme-specific styles */
+.theme-gradient {
+  background: linear-gradient(135deg, #FF9090 0%, #FFB6B6 100%);
+}
+
+.theme-shadow {
+  box-shadow: 0 4px 20px rgba(255, 144, 144, 0.15);
+}
+
+/* Responsive enhancements */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

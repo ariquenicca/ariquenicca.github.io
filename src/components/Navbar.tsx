@@ -42,21 +42,21 @@ const Navbar = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "glass-effect py-3 shadow-sm" : "py-5 bg-transparent"
+        scrolled ? "glass-effect py-2 shadow-sm" : "py-3 sm:py-5 bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link 
             to="/" 
-            className="text-xl font-display font-bold tracking-tight transition-all hover:opacity-80"
+            className="text-xl font-display font-bold tracking-tight transition-all hover:opacity-80 text-primary"
             onClick={closeMenu}
           >
             Developer
           </Link>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -66,7 +66,7 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="button-hover-effect">Resume</Button>
+            <Button className="button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -75,7 +75,7 @@ const Navbar = () => {
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={24} className="text-primary" /> : <Menu size={24} className="text-primary" />}
           </button>
         </div>
       </div>
@@ -99,7 +99,7 @@ const Navbar = () => {
               {item.name}
             </Link>
           ))}
-          <Button className="w-full button-hover-effect">Resume</Button>
+          <Button className="w-full button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
         </div>
       </div>
     </header>

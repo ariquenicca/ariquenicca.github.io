@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative">
+    <section id="contact" className="py-16 md:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute bottom-0 left-0 w-2/3 h-1/3 bg-primary/5 rounded-full blur-3xl -z-10"></div>
       
       <div className="container mx-auto">
@@ -48,10 +48,10 @@ const Contact = () => {
           subtitle="Have a project in mind or want to discuss potential opportunities? I'd love to hear from you."
         />
         
-        <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 md:gap-12 max-w-5xl mx-auto">
           {/* Contact Info */}
           <div className="md:col-span-1 animate-on-scroll">
-            <div className="bg-card rounded-lg p-6 shadow-sm border border-border/50">
+            <div className="bg-card rounded-lg p-6 shadow-sm border border-border/50 theme-shadow">
               <h3 className="text-xl font-bold mb-6">Contact Information</h3>
               
               <div className="space-y-6">
@@ -92,12 +92,12 @@ const Contact = () => {
               
               <div className="border-t border-border/50 my-6 pt-6">
                 <h4 className="text-sm font-medium mb-4">Connect with me</h4>
-                <div className="flex space-x-4">
+                <div className="flex flex-wrap gap-3">
                   {["LinkedIn", "GitHub", "Twitter", "Dribbble"].map((platform) => (
                     <a 
                       key={platform}
                       href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
                     >
                       {platform}
                     </a>
@@ -109,7 +109,7 @@ const Contact = () => {
           
           {/* Contact Form */}
           <div className="md:col-span-2 animate-on-scroll">
-            <form onSubmit={handleSubmit} className="bg-card rounded-lg p-6 shadow-sm border border-border/50">
+            <form onSubmit={handleSubmit} className="bg-card rounded-lg p-6 shadow-sm border border-border/50 theme-shadow">
               <div className="grid sm:grid-cols-2 gap-6 mb-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -122,7 +122,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="John Doe"
-                    className="w-full"
+                    className="w-full focus-visible:ring-primary"
                   />
                 </div>
                 <div>
@@ -137,7 +137,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     placeholder="john@example.com"
-                    className="w-full"
+                    className="w-full focus-visible:ring-primary"
                   />
                 </div>
               </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Project Inquiry"
-                  className="w-full"
+                  className="w-full focus-visible:ring-primary"
                 />
               </div>
               
@@ -168,13 +168,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   placeholder="Tell me about your project..."
-                  className="w-full min-h-[150px]"
+                  className="w-full min-h-[150px] focus-visible:ring-primary"
                 />
               </div>
               
               <Button
                 type="submit"
-                className="w-full button-hover-effect"
+                className="w-full md:w-auto button-hover-effect bg-primary hover:bg-primary/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
