@@ -9,7 +9,7 @@ const Footer = () => {
     { name: "GitHub", icon: <Github size={20} />, url: "#" },
     { name: "LinkedIn", icon: <Linkedin size={20} />, url: "#" },
     { name: "Twitter", icon: <Twitter size={20} />, url: "#" },
-    { name: "Email", icon: <Mail size={20} />, url: "mailto:hello@example.com" },
+    { name: "Email", icon: <Mail size={20} />, url: "mailto:nicca.arique@example.com" },
   ];
 
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-8 md:mb-0">
             <Link to="/" className="text-xl font-display font-bold tracking-tight">
-              Developer
+              Nicca Arique
             </Link>
             <p className="text-sm text-muted-foreground mt-2 max-w-md">
               Creating thoughtful digital experiences through clean, efficient code and intuitive design.
@@ -41,7 +41,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} Developer. All rights reserved.
+              © {currentYear} Nicca Arique. All rights reserved.
             </p>
           </div>
         </div>
