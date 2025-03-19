@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   // Handle scroll effect
   useEffect(() => {
@@ -31,11 +32,27 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  // Function to handle smooth scrolling to sections
+  const scrollToSection = (sectionId: string) => {
+    closeMenu();
+    
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      return; // Let the Link component handle the navigation to home page
+    }
+    
+    // For home page sections, scroll smoothly
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navItems = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/#about" },
-    { name: "Projects", link: "/#projects" },
-    { name: "Contact", link: "/#contact" },
+    { name: "Home", link: "/", id: "" },
+    { name: "About", link: "/#about", id: "about" },
+    { name: "Projects", link: "/#projects", id: "projects" },
+    { name: "Contact", link: "/#contact", id: "contact" },
   ];
 
   return (
@@ -52,7 +69,7 @@ const Navbar = () => {
             className="text-xl font-display font-bold tracking-tight transition-all hover:opacity-80 text-primary"
             onClick={closeMenu}
           >
-            Developer
+            Nicca Arique
           </Link>
           
           {/* Desktop Navigation */}
@@ -62,11 +79,24 @@ const Navbar = () => {
                 key={item.name}
                 to={item.link}
                 className="text-sm font-medium hover:text-primary transition-colors duration-200"
+                onClick={(e) => {
+                  if (item.id) {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }
+                }}
               >
                 {item.name}
               </Link>
             ))}
-            <Button className="button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
+            <a 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
+              <Button className="button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -94,12 +124,27 @@ const Navbar = () => {
               key={item.name}
               to={item.link}
               className="text-xl font-medium hover:text-primary transition-colors duration-200"
-              onClick={closeMenu}
+              onClick={(e) => {
+                if (item.id) {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                } else {
+                  closeMenu();
+                }
+              }}
             >
               {item.name}
             </Link>
           ))}
-          <Button className="w-full button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
+          <a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full"
+            onClick={closeMenu}
+          >
+            <Button className="w-full button-hover-effect bg-primary hover:bg-primary/90">Resume</Button>
+          </a>
         </div>
       </div>
     </header>
