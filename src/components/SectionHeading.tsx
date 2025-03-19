@@ -9,7 +9,7 @@ interface SectionHeadingProps {
 
 const SectionHeading = ({ title, subtitle, className }: SectionHeadingProps) => {
   return (
-    <div className={cn("text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-16 animate-on-scroll", className)}>
+    <div className={cn("text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-16 animate-on-scroll px-4", className)}>
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold tracking-tight mb-3 sm:mb-4 text-balance">
         <span className="relative">
           {title}
@@ -17,7 +17,7 @@ const SectionHeading = ({ title, subtitle, className }: SectionHeadingProps) => 
         </span>
       </h2>
       {subtitle && (
-        <p className="text-md sm:text-lg text-muted-foreground text-balance px-4">
+        <p className="text-md sm:text-lg text-muted-foreground text-balance">
           {subtitle}
         </p>
       )}

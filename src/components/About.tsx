@@ -62,17 +62,17 @@ const About = () => {
             
             <div className="mt-8">
               <h3 className="text-xl font-bold mb-4">Technical Skills</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3">
                 {skills.map((skill, index) => (
                   <div 
                     key={index} 
                     className={cn(
-                      "flex items-center space-x-2",
+                      "flex items-center gap-2 pr-2",
                       "transition-transform duration-300 hover:translate-x-1"
                     )}
                   >
                     <CheckCircle2 size={16} className="text-primary shrink-0" />
-                    <span className="text-sm sm:text-base">{skill}</span>
+                    <span className="text-sm sm:text-base truncate">{skill}</span>
                   </div>
                 ))}
               </div>
